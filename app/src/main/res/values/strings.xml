@@ -140,6 +140,8 @@
   <string name="pref_player_controls_display_volume_as_percentage">Display volume as percentage</string>
   <string name="pref_player_controls_show_loading_circle">Show loading circle</string>
   <string name="pref_player_display_show_status_bar">Show system status bar with controls</string>
+  <string name="pref_player_display_mx_layout">MX Player style layout</string>
+  <string name="pref_player_display_mx_layout_summary">MX Player look for the controls in portrait mode: black top and bottom bars, round shortcut buttons, seek bar with times, lock and play buttons. Landscape keeps the default layout. Takes effect next time you open a video.</string>
   <string name="pref_player_display_keep_system_bars">Keep system bars visible</string>
   <string name="pref_player_display_keep_system_bars_summary">Non-fullscreen mode like MX Player. The video plays between the status bar and navigation bar. Takes effect next time you open a video.</string>
   <string name="pref_player_display_panel_opacity">Panel opacity</string>
