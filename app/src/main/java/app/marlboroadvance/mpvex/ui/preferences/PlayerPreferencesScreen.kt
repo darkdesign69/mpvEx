@@ -387,6 +387,16 @@ object PlayerPreferencesScreen : Screen {
           
           item {
             PreferenceCard {
+              val keepSystemBarsVisible by preferences.keepSystemBarsVisible.collectAsState()
+              SwitchPreference(
+                value = keepSystemBarsVisible,
+                onValueChange = preferences.keepSystemBarsVisible::set,
+                title = { Text(stringResource(R.string.pref_player_display_keep_system_bars)) },
+                summary = { Text(stringResource(R.string.pref_player_display_keep_system_bars_summary)) },
+              )
+
+              PreferenceDivider()
+
               val showSystemStatusBar by preferences.showSystemStatusBar.collectAsState()
               SwitchPreference(
                 value = showSystemStatusBar,
