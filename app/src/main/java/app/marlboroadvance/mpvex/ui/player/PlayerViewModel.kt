@@ -718,11 +718,11 @@ class PlayerViewModel(
   fun showControls() {
     if (sheetShown.value != Sheets.None || panelShown.value != Panels.None) return
     try {
-      if (playerPreferences.showSystemStatusBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemStatusBar.get()) {
         host.windowInsetsController.show(WindowInsetsCompat.Type.statusBars())
         host.windowInsetsController.isAppearanceLightStatusBars = false
       }
-      if (playerPreferences.showSystemNavigationBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemNavigationBar.get()) {
         host.windowInsetsController.show(WindowInsetsCompat.Type.navigationBars())
       }
     } catch (e: Exception) {
@@ -735,10 +735,10 @@ class PlayerViewModel(
 
   fun hideControls() {
     try {
-      if (playerPreferences.showSystemStatusBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemStatusBar.get()) {
         host.windowInsetsController.hide(WindowInsetsCompat.Type.statusBars())
       }
-      if (playerPreferences.showSystemNavigationBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemNavigationBar.get()) {
         host.windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
       }
     } catch (e: Exception) {
@@ -750,10 +750,10 @@ class PlayerViewModel(
 
   fun autoHideControls() {
     try {
-      if (playerPreferences.showSystemStatusBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemStatusBar.get()) {
         host.windowInsetsController.hide(WindowInsetsCompat.Type.statusBars())
       }
-      if (playerPreferences.showSystemNavigationBar.get()) {
+      if (!playerPreferences.keepSystemBarsVisible.get() && playerPreferences.showSystemNavigationBar.get()) {
         host.windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
       }
     } catch (e: Exception) {
